@@ -1,15 +1,15 @@
 ### Date created
-Include the date you created this project and README file.
-
+Jun 7,2019,   3:08 PM
+Bikeshare statistics and filter for a dataset
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+calculate statistics and build an interactive environment where a users choses the data and filter for a dataset to analyze
+
 
 ### Files used
-Include the files used
+chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+stackoverflow
