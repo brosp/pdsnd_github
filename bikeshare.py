@@ -11,11 +11,11 @@ def get_filters():
     Asks user to specify a city, month, and day to analyze.
 
     Returns:
-        (str) city - name of the city to analyze
+        (str) city - name of the city to examine
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hi! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city_list = ["chicago", "new york city", "washington"]
     city = input("Enter name of city [chicago, new york city or washington] : ").lower()
@@ -41,7 +41,7 @@ def get_filters():
 
 def load_data(city, month, day):
     """
-    Loads data for the specified city and filters by month and day if applicable.
+    Loads data for the specified city and filters by month and day if necessary.
 
     Args:
         (str) city - name of the city to analyze
@@ -55,21 +55,21 @@ def load_data(city, month, day):
     df["Start Time"] = pd.to_datetime(df["Start Time"])
     df["month"] = df["Start Time"].dt.month
     df["day_of_week"] = df["Start Time"].dt.weekday_name
-    
+
     if month != "all":
         months = ["january", "february", "march", "april", "may", "june"]
         month = months.index(month) + 1;
         df = df[df["month"] == month]
-        
+
     if day != "all":
         df = df[df["day_of_week"] == day.title()]
-    
+
     ans = input("Would you like to display the first 5 rows of DataFrame ? yes or no \n")
     i = 0
     i = ask(df, i)
     while ans != "no":
-        
-        
+
+
         ans = input("Would you like to display the next 5 rows of DataFrame ? yes or no \n ")
         if ans != "no":
             i = ask(df, i+1)
@@ -114,13 +114,13 @@ def station_stats(df):
     # TO DO: display most commonly used end station
     popular_end = df["End Station"].mode()[0]
     print("MOST common End Station : >_ ", popular_end)
-   
+
 
     # TO DO: display most frequent combination of start station and end station trip
 
     result = df[["Start Station", "End Station"]].mode()
     start, end = result["Start Station"][0], result["End Station"][0]
-    
+
     print("MOST frequent combinaison of Start Station and End Station trip : >_ {}, {} ".format(start, end))
 
 
@@ -180,8 +180,8 @@ def ask(df, indice):
     while i < end:
         print(df.iloc[i])
         i += 1
-    return end    
-    
+    return end
+
 def main():
     while True:
         city, month, day = get_filters()
