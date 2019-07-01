@@ -1,5 +1,5 @@
 ### Date created
-Jun 7,2019,   3:08 PM
+Jun 7,2019,   4:00 PM
 Bikeshare statistics and filter for a dataset
 ### Project Title
 Explore US Bikeshare Data
@@ -13,3 +13,4 @@ chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
 stackoverflow
+student Hub
